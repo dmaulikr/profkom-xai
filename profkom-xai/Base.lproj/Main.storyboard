@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Новости-->
+        <scene sceneID="u92-a0-TfV">
+            <objects>
+                <navigationController storyboardIdentifier="NewsNavigationController" id="ccf-x5-6K8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="News" id="cpT-5q-GrX"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M9R-xQ-QmK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FpN-st-dRO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="rSM-lP-DWX" kind="relationship" relationship="rootViewController" id="kag-XJ-Bon"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PL-pM-fsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="220"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="2nN-6x-xZv">
+            <objects>
+                <viewController id="rSM-lP-DWX" customClass="NewsViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ba4-yX-fNx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jbh-wg-3yX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OM0-c8-x4R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новости" id="xhZ-ly-Yhw">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="G3N-9A-wgx"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ieN-z0-VRZ" kind="push" identifier="NewsDetailSegue" id="EFz-uW-qbn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6H-hK-2w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185" y="220"/>
+        </scene>
+        <!--News Page View Controller-->
+        <scene sceneID="z14-c2-Xpp">
+            <objects>
+                <viewController storyboardIdentifier="NewsPageViewController" id="kR8-pE-giZ" customClass="NewsPageViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gf0-Th-mZk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dj5-PF-R2e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="72E-w0-bsm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FBX-jW-i94">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kR8-pE-giZ" id="WLc-t4-ROk"/>
+                                    <outlet property="delegate" destination="kR8-pE-giZ" id="sXa-FJ-IDX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FBX-jW-i94" secondAttribute="bottom" id="G7L-sv-J8R"/>
+                            <constraint firstAttribute="trailing" secondItem="FBX-jW-i94" secondAttribute="trailing" id="jJN-Ez-xbO"/>
+                            <constraint firstItem="FBX-jW-i94" firstAttribute="leading" secondItem="72E-w0-bsm" secondAttribute="leading" id="pP7-1H-uyl"/>
+                            <constraint firstItem="FBX-jW-i94" firstAttribute="top" secondItem="72E-w0-bsm" secondAttribute="top" id="uX9-7V-wtJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hki-BB-zoO">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="FBX-jW-i94" id="T2L-FS-FCd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOa-YL-iNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="-417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7I8-PL-1LJ">
+            <objects>
+                <navigationController storyboardIdentifier="PushNavigationController" id="cuf-5g-1OP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T4K-Se-N0M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1g7-5O-Lgr" kind="relationship" relationship="rootViewController" id="yQ0-hK-GyQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sye-Hs-1PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087" y="-511"/>
+        </scene>
+        <!--Push View Controller-->
+        <scene sceneID="YGj-m8-aDh">
+            <objects>
+                <viewController id="1g7-5O-Lgr" customClass="PushViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FHI-NH-pkC"/>
+                        <viewControllerLayoutGuide type="bottom" id="TN8-6x-UsA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iD9-XI-Xh6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SaK-2v-eBV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="J8Z-78-vqB">
+                            <connections>
+                                <action selector="close:" destination="1g7-5O-Lgr" id="cUX-r8-Agd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="L2s-8q-lYS">
+                            <connections>
+                                <action selector="showActionSheet:" destination="1g7-5O-Lgr" id="Jgn-zd-pl2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6w-Q1-ol6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578" y="-511"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="2LJ-fk-o62">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailViewController" id="ieN-z0-VRZ" customClass="NewsDetailViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wAy-o5-DAl"/>
+                        <viewControllerLayoutGuide type="bottom" id="uXd-5E-AzD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dte-9g-NKK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tEc-dz-bOv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="0Pd-5H-84y">
+                            <connections>
+                                <action selector="showActionSheet:" destination="ieN-z0-VRZ" id="VvH-Kz-CjS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KmT-9o-DZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087" y="220"/>
+        </scene>
+        <!--Газета-->
+        <scene sceneID="ZaM-In-UC8">
+            <objects>
+                <navigationController storyboardIdentifier="NewspaperNavigationController" id="tMJ-bs-rP9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Газета" image="Newspaper" id="iS0-w3-Cg9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="noK-hW-Od2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lfc-b0-Drr" kind="relationship" relationship="rootViewController" id="cW3-s7-Y0j"/>
+                        <segue destination="3Qd-Vu-6fF" kind="push" identifier="IssueSegue" id="G21-Fo-bcG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfd-DX-51o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="1339"/>
+        </scene>
+        <!--Газета "Взлёт"-->
+        <scene sceneID="BKL-qx-zqj">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerNewspaper" id="lfc-b0-Drr" customClass="NewspaperViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Bo-B5-Jqe"/>
+                        <viewControllerLayoutGuide type="bottom" id="eip-Os-Van"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NYw-AV-wma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-CV-v0M">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lfc-b0-Drr" id="IWo-Ki-pUM"/>
+                                    <outlet property="delegate" destination="lfc-b0-Drr" id="Ovj-eV-K7L"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bz3-CV-v0M" firstAttribute="leading" secondItem="NYw-AV-wma" secondAttribute="leading" id="E2u-Ge-UCq"/>
+                            <constraint firstAttribute="trailing" secondItem="Bz3-CV-v0M" secondAttribute="trailing" id="OjM-jP-GIB"/>
+                            <constraint firstAttribute="bottom" secondItem="Bz3-CV-v0M" secondAttribute="bottom" id="SJd-gH-bAy"/>
+                            <constraint firstItem="Bz3-CV-v0M" firstAttribute="top" secondItem="NYw-AV-wma" secondAttribute="top" id="fyl-o0-LUF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Газета &quot;Взлёт&quot;" id="MVh-yp-Zvr">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="cwf-Rd-hts"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Bz3-CV-v0M" id="1z0-LH-nQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5g-Is-WpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="1339"/>
+        </scene>
+        <!--Issue View Controller-->
+        <scene sceneID="QR2-qi-ppg">
+            <objects>
+                <viewController storyboardIdentifier="IssueViewController" id="3Qd-Vu-6fF" customClass="IssueViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2xh-Yw-1zO"/>
+                        <viewControllerLayoutGuide type="bottom" id="sS9-6I-UAg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v5u-tY-CkD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wJf-fb-jqL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcZ-7t-jpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="2037"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="fMI-K8-Gn8">
+            <objects>
+                <navigationController storyboardIdentifier="ScheduleNavigationController" id="wIH-cM-bUE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Расписание" image="Schedule" id="PeG-ow-bhR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kue-KS-yyb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="m1p-zf-WLp" kind="relationship" relationship="rootViewController" id="eJW-H0-Q4w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ph7-dD-6RT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="896"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="3Tt-EH-XLb">
+            <objects>
+                <viewController id="m1p-zf-WLp" customClass="ScheduleViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cak-Oh-Dka"/>
+                        <viewControllerLayoutGuide type="bottom" id="WLJ-4B-Tnl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="slG-ow-Rrp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" prompt="&lt;Не выбрано&gt;" id="4nB-a4-oU0">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="ngi-fg-bI4"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="A6W-Mg-dfK">
+                            <connections>
+                                <action selector="buttonPressed:" destination="m1p-zf-WLp" id="tdP-Rq-0Yg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYN-rT-Pf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445" y="896"/>
+        </scene>
+        <!--Выберите-->
+        <scene sceneID="SQA-Qe-11m">
+            <objects>
+                <viewController id="i2p-1N-2bG" customClass="ScheduleSettingsViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Hm-sE-rhy"/>
+                        <viewControllerLayoutGuide type="bottom" id="wgs-MG-JGN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CH5-P8-k69">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-hp-epe">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F1f-c7-1j9"/>
+                                </constraints>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EER-u5-2ih">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i2p-1N-2bG" id="qZs-Sc-vXP"/>
+                                    <outlet property="delegate" destination="i2p-1N-2bG" id="6ud-oM-Sn1"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlI-JF-a7l">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZFc-SO-54f"/>
+                                    <barButtonItem title="Обновить список" id="4Ds-Lj-MXm">
+                                        <connections>
+                                            <action selector="buttonPressed" destination="i2p-1N-2bG" id="peS-YT-HrU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="j63-b4-Xju"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rya-hp-epe" secondAttribute="trailing" id="3lc-he-GGt"/>
+                            <constraint firstItem="EER-u5-2ih" firstAttribute="leading" secondItem="CH5-P8-k69" secondAttribute="leading" id="RKK-TO-PuO"/>
+                            <constraint firstAttribute="trailing" secondItem="EER-u5-2ih" secondAttribute="trailing" id="THY-ky-eNg"/>
+                            <constraint firstItem="Rya-hp-epe" firstAttribute="leading" secondItem="CH5-P8-k69" secondAttribute="leading" id="Whu-fx-g6Z"/>
+                            <constraint firstItem="SlI-JF-a7l" firstAttribute="top" secondItem="EER-u5-2ih" secondAttribute="bottom" id="dBZ-d4-hyA"/>
+                            <constraint firstItem="wgs-MG-JGN" firstAttribute="top" secondItem="SlI-JF-a7l" secondAttribute="bottom" id="lKF-yx-xFd"/>
+                            <constraint firstItem="EER-u5-2ih" firstAttribute="top" secondItem="Rya-hp-epe" secondAttribute="bottom" id="pCu-yA-51b"/>
+                            <constraint firstAttribute="trailing" secondItem="SlI-JF-a7l" secondAttribute="trailing" id="u3v-Cr-U9F"/>
+                            <constraint firstItem="Rya-hp-epe" firstAttribute="top" secondItem="9Hm-sE-rhy" secondAttribute="bottom" id="vbi-2m-qfd"/>
+                            <constraint firstItem="SlI-JF-a7l" firstAttribute="leading" secondItem="CH5-P8-k69" secondAttribute="leading" id="vwg-v1-4eU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Выберите" id="ulA-mq-ZDU">
+                        <barButtonItem key="leftBarButtonItem" title="Закрыть" id="IDs-jx-VgU">
+                            <connections>
+                                <action selector="closeButtonPressed" destination="i2p-1N-2bG" id="dg7-d0-KvH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barButton" destination="4Ds-Lj-MXm" id="cbi-AC-coe"/>
+                        <outlet property="searchBarContainer" destination="Rya-hp-epe" id="Ell-b7-VLf"/>
+                        <outlet property="tableView" destination="EER-u5-2ih" id="lUK-W0-lZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVM-ED-mUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2462" y="894"/>
+        </scene>
+        <!--О нас-->
+        <scene sceneID="mUz-oL-xF5">
+            <objects>
+                <navigationController storyboardIdentifier="AboutNavigationController" id="8Ke-iM-Eao" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="О нас" image="About" id="SG3-ub-060"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FM5-hP-ZtH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tbA-vm-vtA" kind="relationship" relationship="rootViewController" id="PJK-8X-wDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Li6-0a-5C6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783" y="-33"/>
+        </scene>
+        <!--О нас-->
+        <scene sceneID="jsI-1o-I68">
+            <objects>
+                <viewController id="tbA-vm-vtA" customClass="AboutViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bn0-TT-gqV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Va5-cm-5S2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="29R-5u-BtO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="О нас" id="w3H-OD-tlj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ph-RK-LXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-344" y="-33"/>
+        </scene>
+        <!--Уведомления-->
+        <scene sceneID="GBC-Ue-5D0">
+            <objects>
+                <navigationController storyboardIdentifier="NotificationsNavigationController" id="sGd-5l-I6A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Уведомления" image="Notifications" id="P2E-yf-cHm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hek-ga-o1v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CVT-oP-wQT" kind="relationship" relationship="rootViewController" id="HH0-y4-ygo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYE-oJ-rEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783" y="762"/>
+        </scene>
+        <!--Уведомления-->
+        <scene sceneID="v8U-vz-c4U">
+            <objects>
+                <viewController id="CVT-oP-wQT" customClass="NotificationsViewController" customModule="profkom_xai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tFV-Km-p6Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tf9-lu-wzB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xlv-Vs-TEu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AWc-C8-imi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CVT-oP-wQT" id="mSq-4b-g9v"/>
+                                    <outlet property="delegate" destination="CVT-oP-wQT" id="bjJ-ws-JWM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AWc-C8-imi" secondAttribute="bottom" id="F1i-hT-s52"/>
+                            <constraint firstAttribute="trailing" secondItem="AWc-C8-imi" secondAttribute="trailing" id="Sf0-1N-nao"/>
+                            <constraint firstItem="AWc-C8-imi" firstAttribute="top" secondItem="xlv-Vs-TEu" secondAttribute="top" id="U1q-ta-dlT"/>
+                            <constraint firstItem="AWc-C8-imi" firstAttribute="leading" secondItem="xlv-Vs-TEu" secondAttribute="leading" id="uOL-Cp-b4L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Уведомления" id="G0E-yf-u7h"/>
+                    <connections>
+                        <outlet property="tableView" destination="AWc-C8-imi" id="eFP-cC-mLh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPz-s7-DkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-344" y="762"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Og-wX-osB">
+            <objects>
+                <navigationController storyboardIdentifier="ScheduleSettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="u7x-xD-wcN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fYn-U0-daJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NJb-li-cBE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i2p-1N-2bG" kind="relationship" relationship="rootViewController" id="NG8-vz-t2p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gtP-yP-L91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1930" y="894"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="About" width="25" height="25"/>
+        <image name="News" width="25" height="25"/>
+        <image name="Newspaper" width="25" height="25"/>
+        <image name="Notifications" width="25" height="25"/>
+        <image name="Schedule" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
